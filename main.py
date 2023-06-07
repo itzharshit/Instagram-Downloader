@@ -8,7 +8,7 @@ def random_celeb():
 
 # Function for downloading dp 
 def download_dp(user):
-    username = user.replace('@', '')
+    user.replace('@', '')
     url = f'https://instagram.com/{username}/?__a=1'
     try:
         visit = requests.get(url).json()
