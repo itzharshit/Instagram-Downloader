@@ -15,7 +15,7 @@ def download_dp(username):
         profilePic = visit['graphql']['user']['profile_pic_url_hd']
         st.download_button('Download DP', ProfilePic, file_name='profile_pic.jpg')
     except Exception as e:
-        st.error('Please send valid username!', e)
+        st.error(e)
 
 # Function for downloading media
 def download_media(url):
@@ -45,7 +45,7 @@ def download_media(url):
                 postFile = visit["graphql"]["shortcode_media"]["display_url"]
                 st.download_button('Download post', postFile, file_name='post.jpg')
     except Exception as e:
-        st.error('Please send only public media link.', e)
+        st.error(e)
 
 # Integrating and calling all above functions
 st.title("Instagram Downloader")
@@ -62,5 +62,5 @@ if st.button("Download"):
                     st.error('No Instagram username or URL found.')
             random_celeb()
         except Exception as e:
-            st.error(str(e))
+            st.error(e)
 
